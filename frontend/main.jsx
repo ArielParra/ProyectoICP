@@ -3,15 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-// Import necessary dependencies for global error handling
-import ErrorBoundary from "./ErrorBoundary"; // Assuming you have an ErrorBoundary component
-
-// Import necessary dependencies for performance monitoring
-import * as analytics from "./analytics"; // Example: Google Analytics integration
-
-// Import necessary dependencies for service workers
-import * as serviceWorker from "./serviceWorker";
-
 ReactDOM.render(
   <React.StrictMode>
     <ErrorBoundary> {/* Wrap your App with ErrorBoundary */}

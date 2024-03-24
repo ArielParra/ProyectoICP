@@ -1,7 +1,7 @@
-# ICP-Developer
+# Motobooko Store
+Motoko Book store using ICP technology
 
 ## Instructions
-
 
 Clone the project
 
@@ -22,6 +22,8 @@ Deploy your canisters:
 
 Finally:
 `npm run serve`
+and open your browser at: 
+http://localhost:4173/
 
 # Troubleshoot
 

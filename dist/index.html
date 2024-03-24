@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADb0lEQVRYw+2Vz2sTQRTH8yfkH2gck2yyiVBiBdFGoSJIvWj9hU20uj2IooeIv9ps1UzbFLFQU1QQq7gFwWoSuy16EA9WPHhS4kmwhw6Jooi2a1Jpta37fJMfYtbUrGfz4DFZwszn+33zZsZiqUUtalELQxCVWcUEa/LE04PeZEbho5h8d/Bf1tBaiDW7XwhlWx1KLuhQsgFnTAs4WqpO9CTfhryJjOZJZKBCMjNCZoPOSG6foH0JOiHLM+DQ+Tjb7tJzx0T2Nbyq8hreOLotwuqHXsMyIoBXhSjM+odrSSQISmVL4GKiGMi1u2D2mAhfT6+CuUg9zF1siJVNFhNvI+vlCWhuvgk73X2wx92nHRB6BzfSZxJuwXDFaqiM/IK3EoQLrAQsOM9/U61NkHJHRQXhbI7Ww3z/avh2ZQ18V9ZGCnBcaHNgBHa4ojrC9d1idLiF0DKH4ggjCJ2oJKLgXGC5oFPnWYA7Y8YKzVMfmev3qd+uIvzWWlgYWQegriOWrZuuDXPXuzD3uvvY3/ZXTKRpuYh0KiM1sN9LrrU6pGWbM+azovPUwt31sDTm1xfUxkELwhkX0OqKQrs7ur1akxlFbLvxBN4d9AFvulzAUbVJF+KN0qLqh8UxP/wY3zDFBUDAHYVDQq9+hFBi5pgZRZwaGEL3QsjM3Hks+9L4hryAxbFG3RJE54cxTwg9eodJAZpNjpw48/iP02FmLpbdx+FLYwURliOuXnbS2aNTZ7d+wUElM/AZW1iftoWhre952Z3hxdNkQoDEnRfSn7KccdIYwmHAQeG6PcIUwwkwwqfrOvNwnlOe7pQXG9FsJUBtsi6N+1kRDiP3zykWKlLC4UP2CNyxn4cHK8+mJgxboZHj1um6sFoCz6yQ+cg+kA7iw6vbKMJ4T5T2njvOlx974PLoJeDHO//nTXt36K79vP5w5Tl4ivmCnIXJOnn0o60THYdjCNNK8KKAlIbw0uLLiABPPKN2JG7TV2qbMq1u0dJqCyRHceuSj3C70rSsPA/sXfQpgl+SLniDDt8XYDov+UxxzAuo61R4RSq/JenB5a7w8l4xwEvxgsjS5AqZvbfJBXjJMf6esclTn0m46osmxhle3xlWCSzibcpf2qpH5RPpaNKIHEI45cm///VZ5yDxXpry5K+sKXAtalGL/zJ+Aobf1VhGoFk3AAAAAElFTkSuQmCC" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="module" crossorigin src="/assets/index.f8eb3501.js"></script>
+  <link rel="stylesheet" href="/assets/index.2a4bc6ae.css">
+  <title>Motobooko</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    h1 {
+        margin: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    .book {
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    .login-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .add-to-cart-button {
+        background-color: #ff6600;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .add-to-cart-button:hover {
+        background-color: #e65c00;
+    }
+    .view-cart-button {
+        background-color: #1e90ff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .view-cart-button:hover {
+        background-color: #0066cc;
+    }
+    #cart {
+        display: none;
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    #cart h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        color: #333;
+    }
+    #cart-items {
+        list-style-type: none;
+        padding: 0;
+    }
+    #cart-items li {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    #cart-items li:last-child {
+        margin-bottom: 0;
+    }
+    #total-price {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+    #cart-top-bar {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        font-weight: bold;
+        font-size: 1.2em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    #cart-top-bar hr {
+        border: none;
+        border-top: 1px solid white;
+        margin: 0;
+    }
+    .remove-from-cart-button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin-left: 10px;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
+    }
+    .remove-from-cart-button:hover {
+        background-color: #c82333;
+    }
+  </style>
+  </head>
+  <body>
+  <div id="root"></div>
+  <header>
+    <h1>Welcome to Motobooko our motoko based bookstore</h1>
+    <button class="login-button">Log In using ICP</button>
+    <button class="view-cart-button">View Cart</button>
+  </header>
+  <div class="container">
+    <div class="book">
+        <h2>Book Title 1</h2>
+        <p>Author: Author Name</p>
+        <p>Price: $19.99</p>
+        <button class="add-to-cart-button" data-title="Book Title 1" data-author="Author Name" data-price="19.99">Add to Cart</button>
+    </div>
+    <div class="book">
+        <h2>Book Title 2</h2>
+        <p>Author: Author Name</p>
+        <p>Price: $24.99</p>
+        <button class="add-to-cart-button" data-title="Book Title 2" data-author="Author Name" data-price="24.99">Add to Cart</button>
+    </div>
+    <div class="book">
+        <h2>Book Title 3</h2>
+        <p>Author: Author Name</p>
+        <p>Price: $14.99</p>
+        <button class="add-to-cart-button" data-title="Book Title 3" data-author="Author Name" data-price="14.99">Add to Cart</button>
+    </div>
+  </div>
+  
+  <div id="cart">
+    <div id="cart-top-bar">
+      <span>Cart</span>
+      <hr>
+    </div>
+    <ul id="cart-items"></ul>
+    <p id="total-price">Total Price: <span id="total-amount"></span></p>
+  </div>
+  
+  
+  <script>
+    // JavaScript code here
+  </script>
+  </body>
+  </html>
+  
+<script>
+  // Array to store cart items
+  let cartItems = [];
+
+  // Add event listeners to "Add to Cart" buttons
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+  addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const confirmation = confirm('Are you sure you want to add this item to your cart?');
+          if (confirmation) {
+              const title = button.dataset.title;
+              const author = button.dataset.author;
+              const price = parseFloat(button.dataset.price);
+              cartItems.push({ title, author, price });
+              console.log(cartItems);
+              displayCart(); // Automatically update cart view
+          }
+      });
+  });
+
+  // Event listener for "View Cart" button
+  const viewCartButton = document.querySelector('.view-cart-button');
+  viewCartButton.addEventListener('click', () => {
+      const cart = document.getElementById('cart');
+      cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
+      if (cart.style.display === 'block') {
+          displayCart();
+      }
+  });
+
+  // Function to display cart items
+  function displayCart() {
+      const cart = document.getElementById('cart');
+      const cartItemsList = document.getElementById('cart-items');
+      cartItemsList.innerHTML = '';
+      cartItems.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.textContent = `${item.title} - ${item.author} - $${item.price.toFixed(2)}`;
+          const removeButton = document.createElement('button');
+          removeButton.textContent = 'Remove';
+          removeButton.className = 'remove-from-cart-button';
+          removeButton.addEventListener('click', () => {
+              removeItemFromCart(index);
+          });
+          li.appendChild(removeButton);
+          cartItemsList.appendChild(li);
+      });
+      cart.style.display = 'block';
+      updateCartTotal();
+  }
+
+  // Function to remove item from cart
+  function removeItemFromCart(index) {
+      cartItems.splice(index, 1);
+      displayCart();
+  }
+
+  // Function to update cart total price
+  function updateCartTotal() {
+      const totalPriceElement = document.getElementById('total-price');
+      const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+      totalPriceElement.textContent = totalPrice.toFixed(2);
+  }
+</script>
+</body>
+</html>
