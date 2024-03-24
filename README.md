@@ -9,21 +9,19 @@ Clone the project
 git clone https://github.com/ArielParra/ProyectoICP.git
 ```
 Go to the project directory
-
 `cd ProyectoICP`
+
 Install the npm dependencies
-
 `npm install`
-Start a replica:
 
+Start a replica:
 `dfx start --background --clean`
 
 Deploy your canisters:
-
 `dfx deploy`
 
 Finally:
-npm run serve
+`npm run serve`
 
 # Troubleshoot
 
@@ -41,4 +39,6 @@ dfx generate #after this you need to do `dfx deploy` again
 
 Fix some npm packages errors:
 
-`npm audit fix --force` or `rm -r -d node_modules && npm install`
+`npm audit fix --force`
+or 
+`rm -r -d node_modules && npm install`

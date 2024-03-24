@@ -1,17 +1,16 @@
-import React from "react"
-import logo from "./assets/dfinity.svg"
+import React from "react";
+import logo from "./assets/dfinity.svg";
 
-import { createClient } from "@connect2ic/core"
-import { InternetIdentity } from "@connect2ic/core/providers/internet-identity"
-import { ConnectButton, ConnectDialog, Connect2ICProvider } from "@connect2ic/react"
-import "@connect2ic/core/style.css"
+import { createClient } from "@connect2ic/core";
+import { InternetIdentity } from "@connect2ic/core/providers/internet-identity";
+import { ConnectButton, ConnectDialog, Connect2ICProvider } from "@connect2ic/react";
+import "@connect2ic/core/style.css";
 
-//Import canister definitions like this:
-import * as social from "../src/declarations/social"
-import { IcpSocial } from "./components/Social"
+// Import canister definitions like this:
+import * as social from "../src/declarations/social";
+import { IcpSocial } from "./components/Social";
 
 function App() {
-
   return (
     <div className="min-h-screen">
       <header className="relative flex justify-start items-center p-4 border-b border-gray-600">
@@ -23,7 +22,7 @@ function App() {
       <ConnectDialog />
       <IcpSocial />
     </div>
-  )
+  );
 }
 
 const client = createClient({
@@ -40,10 +39,10 @@ const client = createClient({
      */
     dev: true,
   },
-})
+});
 
 export default () => (
   <Connect2ICProvider client={client}>
     <App />
   </Connect2ICProvider>
-)
+);
